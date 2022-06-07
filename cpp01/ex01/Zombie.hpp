@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:26:24 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/06 21:11:09 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/07 11:53:47 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie{
 		void	setName(std::string name);
 
 	private:
-		std::string	name;
+		std::string	_name;
 };
 
 Zombie* zombieHorde(int N, std::string name);

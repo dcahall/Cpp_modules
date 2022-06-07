@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:26:24 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/06 18:56:39 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/07 11:50:51 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie{
 		void	announce(void);
 
 	private:
-		std::string	name;
+		std::string	_name;
 };
 
 Zombie *newZombie(std::string name);
