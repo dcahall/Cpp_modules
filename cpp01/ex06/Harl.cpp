@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 12:11:26 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/08 17:18:32 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/15 19:45:06 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,21 @@ void	Harl::_printComplain(int index){
 
 void	Harl::complain(std::string level){
 	std::string	allLevels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int	i;
+	int	flag = 0;
+	int	i = 0;
 
 	for (i = 0; i < 4; i++)
 		if (allLevels[i] == level)
+		{
+			flag = 1;
 			break;
-	switch(i) {
-		case 0:
-			_printComplain(i);
-			break;
+		}
+	switch(flag) {
 		case 1:
-			_printComplain(i);
-			break;
-		case 2:
-			_printComplain(i);
-			break;
-		case 3:
 			_printComplain(i);
 			break;
 		default:
 			std::cout << "No matches" << std::endl;
 	}
-
 }
 
