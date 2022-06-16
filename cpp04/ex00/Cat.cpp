@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 12:05:47 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/16 15:23:38 by dcahall          ###   ########.fr       */
+/*   Created: 2022/06/14 12:41:06 by dcahall           #+#    #+#             */
+/*   Updated: 2022/06/14 12:56:05 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include "ClapTrap.hpp"
+#include "Cat.hpp"
 
+Cat::Cat(void) : Animal(){
+	std::cout << "Cat constructor called\n";
+	setType("Cat");
+}
 
-class ScavTrap: public ClapTrap
-{
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &instance);
-		~ScavTrap();
+Cat::~Cat(void) {
+	std::cout << "Cat destructor called\n";
+}
 
-		ScavTrap &operator=(ScavTrap const &instance);
+Cat::Cat(Cat const &instance){
+	_type = instance._type;
+}
 
-		void	attack(std::string const &target);
-		void	guardGate(void);
-};
+Cat	&Cat::operator=(Cat const &instance){
+	if (this != &instance)
+		_type = instance._type;
+	return (*this);
+}
 
-#endif
+void	Cat::makeSound(void) const{
+	std::cout << "Meow\n";
+}
+

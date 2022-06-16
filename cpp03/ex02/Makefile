@@ -6,7 +6,7 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 18:52:31 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/13 15:03:42 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/14 12:53:04 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ HEADER			=	$(addprefix $(INCLUDE), ClapTrap.hpp ScavTrap.hpp FragTrap.hpp)
 
 OBJ				=	$(ALL_SRCS:.cpp=.o)
 
-CC				=	g++
+CC				=	c++
 
 RM				=	rm -f
 

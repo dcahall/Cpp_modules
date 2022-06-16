@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:26:03 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/09 17:33:36 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/13 17:18:46 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void){
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
 	
 	return 0;
 }

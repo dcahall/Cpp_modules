@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 12:05:47 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/16 15:23:38 by dcahall          ###   ########.fr       */
+/*   Created: 2022/06/14 12:41:06 by dcahall           #+#    #+#             */
+/*   Updated: 2022/06/14 12:56:00 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include "ClapTrap.hpp"
+#include "Dog.hpp"
 
+Dog::Dog(void) : Animal(){
+	std::cout << "Dog constructor called\n";
+	setType("Dog");
+}
 
-class ScavTrap: public ClapTrap
-{
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &instance);
-		~ScavTrap();
+Dog::~Dog(void) {
+	std::cout << "Dog destructor called\n";
+}
 
-		ScavTrap &operator=(ScavTrap const &instance);
+Dog::Dog(Dog const &instance){
+	_type = instance._type;
+}
 
-		void	attack(std::string const &target);
-		void	guardGate(void);
-};
+Dog	&Dog::operator=(Dog const &instance){
+	if (this != &instance)
+		_type = instance._type;
+	return (*this);
+}
 
-#endif
+void	Dog::makeSound(void) const{
+	std::cout << "Woof\n";
+}
+

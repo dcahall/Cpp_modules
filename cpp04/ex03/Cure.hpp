@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 12:05:47 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/16 15:23:38 by dcahall          ###   ########.fr       */
+/*   Created: 2022/06/15 14:38:44 by dcahall           #+#    #+#             */
+/*   Updated: 2022/06/16 11:46:42 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include "ClapTrap.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
+# include "AMateria.hpp"
 
-
-class ScavTrap: public ClapTrap
+class Cure: public AMateria
 {
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &instance);
-		~ScavTrap();
+		Cure(void);
+		Cure(Cure const &instance);
+		~Cure(void);
 
-		ScavTrap &operator=(ScavTrap const &instance);
-
-		void	attack(std::string const &target);
-		void	guardGate(void);
+		Cure		&operator=(Cure const &instance);
+		
+		AMateria	*clone(void) const;
+		void		use(ICharacter &target);
 };
 
 #endif

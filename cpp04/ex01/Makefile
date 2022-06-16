@@ -6,21 +6,24 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 18:52:31 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/13 17:14:16 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/14 17:10:02 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Fixed
+NAME			=	brain
 
 INCLUDE			=	./
 
 SRC_PATH		= 	./
 
-SRCS			=	main.cpp Fixed.cpp
+SRCS			=	main.cpp 		Dog.cpp 		Cat.cpp\
+					Animal.cpp		Brain.cpp		WrongAnimal.cpp\
+					WrongCat.cpp
 
 ALL_SRCS		=	$(addprefix $(SRC_PATH), $(SRCS))
 
-HEADER			=	$(addprefix $(INCLUDE), Fixed.hpp)
+HEADER			=	$(addprefix $(INCLUDE), Dog.hpp Animal.hpp Cat.hpp\
+					Brain.hpp WrongAnimal.hpp WrongCat.hpp)
 
 OBJ				=	$(ALL_SRCS:.cpp=.o)
 
