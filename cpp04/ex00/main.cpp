@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:47:34 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/14 16:00:01 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/17 12:28:18 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int main()
 	delete j;
 	delete i;
 	delete k;
+	delete g;
 	return 0;
 }
