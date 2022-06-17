@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:25:07 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/14 19:14:25 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/17 12:36:13 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,7 @@ void	Animal::setType(std::string newType){
 }
 
 std::string	Animal::getType(void) const{ return _type; }
+
+void	Animal::makeSound(void) const{
+	std::cout << "Ummmm\n";
+}
