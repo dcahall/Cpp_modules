@@ -6,11 +6,11 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 18:52:31 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/19 14:49:57 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/19 14:50:54 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	form
+NAME			=	intern
 
 INCLUDE			=	./
 
@@ -18,13 +18,14 @@ SRC_PATH		= 	./
 
 SRCS			=	main.cpp					Bureaucrat.cpp\
 					PresidentialPardonForm.cpp	RobotomyRequestForm.cpp\
-					ShrubberyCreationForm.cpp	Form.cpp
+					ShrubberyCreationForm.cpp	Form.cpp\
+					Intern.cpp
 
 ALL_SRCS		=	$(addprefix $(SRC_PATH), $(SRCS))
 
 HEADER			=	$(addprefix $(INCLUDE), Bureaucrat.hpp Form.hpp\
 					PresidentialPardonForm.hpp ShrubberyCreationForm.hpp\
-					RobotomyRequestForm.hpp)
+					RobotomyRequestForm.hpp Intern.hpp)
 
 OBJ				=	$(ALL_SRCS:.cpp=.o)
 
