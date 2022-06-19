@@ -6,12 +6,13 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:10:19 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/17 17:57:36 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/18 16:59:57 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <exception>
 #include <iostream>
 
 Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150){}
@@ -78,6 +79,19 @@ void	Bureaucrat::signForm(Form &instance){
 	catch(const std::exception& e)
 	{
 		std::cout << getName() << " couldn't sign " << instance.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form &instance){
+	try
+	{
+		instance.execute(*this);
+		std::cout << getName() << " executed " << instance.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << getName() << " couldn't execute " << instance.getName();
 		std::cout << " because " << e.what() << std::endl;
 	}
 }

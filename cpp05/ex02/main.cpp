@@ -6,12 +6,17 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:25:00 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/17 19:03:15 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/19 13:07:06 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <iostream>
+#include <exception>
 
 int main(void){
 	try
@@ -22,19 +27,38 @@ int main(void){
 	{
 		std::cout << e.what() << '\n';
 	}
-	try
-	{
-		Form("Random", 151, 151);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
-		Bureaucrat	inst1("Georgy", 20);
-		Form		inst2("Routine", 10, 5);
-		Form		inst3("LARGE ROUTINE", 40, 30);
-		inst1.signForm(inst2);
-		inst1.signForm(inst3);
-		std::cout << inst3 << std::endl;
-		std::cout << inst2 << std::endl;
+	Form	*scf = new ShrubberyCreationForm("Somebody");
+	Form	*ppf = new PresidentialPardonForm("Somebody");
+	Form	*rrf = new RobotomyRequestForm("Somebody");
+	Bureaucrat	*donald = new Bureaucrat("donald", 4);
+	Bureaucrat	*zic = new Bureaucrat("zic" , 30);
+
+	std::cout << "-----Sign Form------" << std::endl;
+	zic->signForm(*scf);
+	zic->signForm(*rrf);
+	zic->signForm(*ppf);
+	std::cout << "Is form signed? " << ppf->getSigned() << std::endl;
+	donald->signForm(*ppf);
+	std::cout << std::endl;
+
+	std::cout << "------Execute command------" << std::endl;
+	zic->executeForm(*scf);
+	zic->executeForm(*rrf);
+	zic->executeForm(*ppf);
+	donald->executeForm(*ppf);
+	std::cout << std::endl;
+
+	std::cout << "------Deep copy-----" << std::endl;
+	Form	*copy = new ShrubberyCreationForm(*((ShrubberyCreationForm *)scf));
+	std::cout << *scf << std::endl;
+	Bureaucrat *copyToo = new Bureaucrat(*donald);
+	std::cout << *copyToo << std::endl;
+
+	delete scf;
+	delete ppf;
+	delete rrf;
+	delete donald;
+	delete zic;
+	delete copy;
+	delete copyToo;
 }

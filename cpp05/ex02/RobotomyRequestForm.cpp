@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 19:30:25 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/19 13:00:47 by dcahall          ###   ########.fr       */
+/*   Created: 2022/06/18 15:49:48 by dcahall           #+#    #+#             */
+/*   Updated: 2022/06/19 13:04:39 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): Form("SCF", 145, 137),
-_target("Default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("SCF", 145, 137),
- _target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(void): Form("RRF", 72, 45), _target("Default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &inst):
+RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RRF", 72, 45),
+_target(target) {}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &inst):
 Form(inst.getName(), inst.getGradeSign(), inst.getGradeExecute()),
 _target(inst.getTarget()) {}
+ 
+RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
-
-ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm
+RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm
 const &inst){
 	if (this != &inst)
 		_target = inst.getTarget();
 	return (*this);
 }
 
-std::string	ShrubberyCreationForm::getTarget(void) const { return _target; }
+std::string	RobotomyRequestForm::getTarget(void) const { return _target; }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
-	std::ofstream	outfile;
-
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
 	if (getSigned() == false || executor.getGrade() > this->getGradeExecute())
 		throw GradeTooHighException() ;
 
-	outfile.open(_target + "_shrubbery");
-	if (!outfile.is_open())
-		std::cout << "The problem with opening the file" << std::endl;
+	srand(time(NULL));	
+		std::cout << "Bz - z - z - z: ";
+	if (rand() % 2)
+		std::cout << _target << " was robotized\n";
 	else
-		outfile << TREE;		
+		std::cout << _target << " was not robotized\n";
 }

@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:08:56 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/17 19:41:24 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/18 17:19:23 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ class Form
 		bool				getSigned(void) const;
 
 		void				beSigned(Bureaucrat &instance);
-		virtual void		execute(Bureaucrat const &executor) const = 0;
+		virtual void		execute(Bureaucrat const &) const = 0;
 
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				const char* what() const throw();
 		};
 		
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				const char* what() const throw();
 		};
 
 	private:
