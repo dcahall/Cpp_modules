@@ -40,9 +40,10 @@ std::string	ShrubberyCreationForm::getTarget(void) const { return _target; }
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
 	std::ofstream	outfile;
 
-	if (getSigned() == false || executor.getGrade() > this->getGradeExecute())
-		throw GradeTooHighException() ;
-
+	if (executor.getGrade() > this->getGradeExecute())
+		throw GradeTooHighException();
+	else if (getSigned() == false)
+		throw FormIsUnsigned();
 	outfile.open(_target + "_shrubbery");
 	if (!outfile.is_open())
 		std::cout << "The problem with opening the file" << std::endl;

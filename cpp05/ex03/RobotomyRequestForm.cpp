@@ -39,9 +39,10 @@ const &inst){
 std::string	RobotomyRequestForm::getTarget(void) const { return _target; }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
-	if (getSigned() == false || executor.getGrade() > this->getGradeExecute())
-		throw GradeTooHighException() ;
-
+	if (executor.getGrade() > this->getGradeExecute())
+		throw GradeTooHighException();
+	else if (getSigned() == false)
+		throw FormIsUnsigned();
 	srand(time(NULL));	
 		std::cout << "Bz - z - z - z: ";
 	if (rand() % 2)

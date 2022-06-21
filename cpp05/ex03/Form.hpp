@@ -48,6 +48,12 @@ class Form
 				const char* what() const throw();
 		};
 
+		class FormIsUnsigned: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
 	private:
 		std::string const	_name;
 		int const			_gradeSign;

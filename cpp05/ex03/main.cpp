@@ -19,48 +19,31 @@
 #include <iostream>
 #include <exception>
 
-int main(void){
-	try
-	{
-		Bureaucrat("Random", 0);
+static void	test(std::string name, std::string target) {
+
+	Bureaucrat	mike("Mike", 1);
+	Intern		someRandomIntern;
+	Form		*someRandomForm;
+
+	std::cout << "-----------------------------------------------" << std::endl;
+	try {
+		someRandomForm = someRandomIntern.makeForm(name, target);
+		mike.signForm(*someRandomForm);
+		mike.executeForm(*someRandomForm);
+		delete someRandomForm;
 	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
+	catch (std::exception & e) {
+		std::cout << "Unable to create form: " << e.what() << std::endl;
 	}
-	Intern ourIntern;
-	Form	*scf = ourIntern.makeForm("Shrubber creation", "Somebody");
-	Form	*ppf = ourIntern.makeForm("Presidential pardon", "Somebody");
-	Form	*rrf = ourIntern.makeForm("Robotomy request", "Somebody");
-	Bureaucrat	*donald = new Bureaucrat("donald", 4);
-	Bureaucrat	*zic = new Bureaucrat("zic" , 30);
 
-	std::cout << "-----Sign Form------" << std::endl;
-	zic->signForm(*scf);
-	zic->signForm(*rrf);
-	zic->signForm(*ppf);
-	std::cout << "Is form signed? " << ppf->getSigned() << std::endl;
-	donald->signForm(*ppf);
-	std::cout << std::endl;
+}
 
-	std::cout << "------Execute command------" << std::endl;
-	zic->executeForm(*scf);
-	zic->executeForm(*rrf);
-	zic->executeForm(*ppf);
-	donald->executeForm(*ppf);
-	std::cout << std::endl;
+int main () {
 
-	std::cout << "------Deep copy-----" << std::endl;
-	Form	*copy = new ShrubberyCreationForm(*((ShrubberyCreationForm *)scf));
-	std::cout << *scf << std::endl;
-	Bureaucrat *copyToo = new Bureaucrat(*donald);
-	std::cout << *copyToo << std::endl;
+	test("Shrubbery creation", "Bender");
+	test("Robotomy request", "Bender");
+	test("Presidential pardon", "Bender");
+	test("NON-EXISTENT", "Bender");
 
-	delete scf;
-	delete ppf;
-	delete rrf;
-	delete donald;
-	delete zic;
-	delete copy;
-	delete copyToo;
+	return 0;
 }
