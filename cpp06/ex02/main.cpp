@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:12:57 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/21 18:26:59 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/21 18:31:24 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(void){
 	srand(time(NULL));
 	Base *tmp1;
 
+	identify(NULL);
+	std::cout << std::endl;
+	
 	for(int i = 0; i < 5; i++)
 	{
 		tmp1 = generate();
