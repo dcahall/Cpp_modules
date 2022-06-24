@@ -6,7 +6,7 @@
 /*   By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:31:55 by dcahall           #+#    #+#             */
-/*   Updated: 2022/06/21 15:27:25 by dcahall          ###   ########.fr       */
+/*   Updated: 2022/06/24 12:22:08 by dcahall          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ String::operator double(void){
 		std::cout.precision(1);
 		std::cout << "double: ";
 		num = static_cast<double>(std::stod(_str));
-		std::cout << std::fixed << num  << "f" << std::endl;
+		std::cout << std::fixed << num  << std::endl;
 	}
 	catch (std::invalid_argument) 
 	{
@@ -61,7 +61,7 @@ String::operator float(void){
 		std::cout.precision(1);
 		std::cout << "float: ";
 		num = static_cast<float>(std::stof(_str));
-		std::cout << std::fixed << num << std::endl;
+		std::cout << std::fixed << num << "f" << std::endl;
 
 	}
 	catch (std::invalid_argument) 
