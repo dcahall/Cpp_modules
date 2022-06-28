@@ -6,7 +6,7 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 18:52:31 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/06 21:28:31 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/28 19:27:52 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ALL_SRCS		=	$(addprefix $(SRC_PATH), $(SRCS))
 
 OBJ				=	$(ALL_SRCS:.cpp=.o)
 
-CC				=	g++
+CC				=	c++
 
 RM				=	rm -f
 

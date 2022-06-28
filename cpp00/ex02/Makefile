@@ -6,7 +6,7 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 16:04:57 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/06 13:15:25 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/28 19:27:33 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ HEADER			=	$(addprefix $(INCLUDE), Account.hpp)
 
 OBJ				=	$(ALL_SRCS:.cpp=.o)
 
-CC				=	g++
+CC				=	c++
 
 RM				=	rm -f
 

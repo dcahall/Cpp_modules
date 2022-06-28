@@ -6,7 +6,7 @@
 #    By: dcahall <dcahall@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 12:33:34 by dcahall           #+#    #+#              #
-#    Updated: 2022/06/04 17:34:10 by dcahall          ###   ########.fr        #
+#    Updated: 2022/06/28 19:27:18 by dcahall          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS		=	./megaphone.cpp
 
 OBJ			=	$(patsubst %.cpp, %.o, $(SRCS) )
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -f
 
